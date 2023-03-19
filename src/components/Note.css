@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+html,
+body {
+  width: 400px;
+  height: 600px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+  font-family: monospace;
+  font-size: 21px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+    background: linear-gradient(-45deg,
+        rgb(random(255), random(255), random(255)),
+        rgb(random(255), random(255), random(255)),
+        rgb(random(255), random(255), random(255)),
+        rgb(random(255), random(255), random(255)));
+  }
+}
+
+.ProseMirror p {
+  padding: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: #e3e3e3;
+  color: black;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #ffffff;
+  overflow: scroll;
+}
+
+
+.ProseMirror:focus {
+  outline: none;
+}
+
+.ProseMirror {
+
+  background-color: #e3e3e3;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #ffffff;
+}
