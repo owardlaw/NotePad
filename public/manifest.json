@@ -9,12 +9,5 @@
       "512": "logo.png"
     }
   },
-  "icons": [
-    {
-      "src": "logo.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
   "host_permissions": []
 }
