@@ -4,17 +4,60 @@
   overscroll-behavior: none;
 }
 
+.buttons {
+  position:absolute;
+  top: 30px;
+}
+
+#buttons {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;background-color: #00d9ffdc;
+  border: 1px solid black;
+}
+
+#buttons:hover {
+  background-color: #bcf5ff;
+}
+
+
+#buttons-dark{
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  background-color: #005038;
+  border: 1px solid rgb(122, 122, 122);
+}
+
+#buttons-dark:hover {
+  background-color:#42a18adc;
+}
+
+
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  height: 100vh;
-  font-family: monospace;
-  font-size: 21px;
+  height: 600px;
+  width: 450px;
+  position: relative;
+  background-color: #ffd5d5dc;
 }
+
+.Dark-App {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 450px;
+  position: relative;
+  background-color: #202020dc;
+}
+
 
 /* Arrow */
 .arrows {
@@ -32,7 +75,7 @@
 #arrow {
   margin: 40px;
   padding: 5px;
-  border: 1px solid  #ffffff;
+  border: 1px solid #ffffff;
   border-radius: 50%;
   color: #ffffff;
 }

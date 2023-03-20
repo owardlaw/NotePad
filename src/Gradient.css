@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightsalmon;
+    height: 100vh;
+  }
+  
+  section {
+    position: relative;
+    width: 250px;
+  }
+  
+  .ball {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 250px;
+    border-radius: 125px;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  /* Isolation creates a new stacking context for mix-blend-mode. See: https://developer.mozilla.org/en-US/docs/Web/CSS/isolation */
+  .isolate {
+    isolation: isolate;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Magic: using the noise SVG as a background, and then upping the contrast and brightness
+  
+  /* Note: Importing the noise.svg from an external site, but in practice you would simply point to the svg file as a relative path. (Referencing its id doesn't work either) */
+  
+  .ball-shadow {
+    height: 100%;
+    background: radial-gradient(circle at 65% 35%, rgba(0, 0, 0, 0), mediumblue), url(https://grainy-gradients.vercel.app/noise.svg);     
+    filter: contrast(120%) brightness(900%);
+  }
+  
+  /* The smooth gradient to give the ball some sheen. Blending with the noise further sharpens it. */
+  
+  .ball-light {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 67% 30%, lightsalmon, crimson);
+    mix-blend-mode: multiply;
+  }
+  
+  /* To continue the demo of noise, the shadow on the ground. No isolation here, so the blending includes the background */
+  .ground {
+    position: absolute;
+    width: 150%;
+    height: 140px;
+    bottom: -10px;
+    left: -65%;
+    transform: rotateZ(7deg);
+    mix-blend-mode: multiply;
+  }
+  
+  .ground-shadow {
+    width: 95%;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 70%, navy, rgba(0, 0, 0, 0)), url(https://grainy-gradients.vercel.app/noise.svg);
+    filter: contrast(150%) brightness(700%);
+  }

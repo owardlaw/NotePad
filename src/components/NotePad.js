@@ -3,7 +3,7 @@ import "./Note.css";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 
-const NotePad = () => {
+const NotePad = ({ darkMode }) => {
 
   const editor = useEditor({
     extensions: [StarterKit],
@@ -15,7 +15,6 @@ const NotePad = () => {
 
   useEffect(() => {
     const savedText = localStorage.getItem(`savedText`);
-    console.log("test", savedText)
     if (savedText && editor) {
       const waitForEditor = setInterval(() => {
         if (editor.commands) {
@@ -40,7 +39,12 @@ const NotePad = () => {
     }
   };
 
-  return <EditorContent editor={editor} onKeyDown={handleKeyDown} />;
+
+  return (
+    <div className={darkMode ? "editor-container" : "editor-container-dark"} >
+      <EditorContent editor={editor} onKeyDown={handleKeyDown} />
+    </div>
+  );
 };
 
 export default NotePad;
